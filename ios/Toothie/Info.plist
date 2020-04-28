@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleDisplayName</key>
+    <string>Toothie</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key>
+    <string>se.medigital.toothie.debug</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>Toothie</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLIconFile</key>
+        <string />
+        <key>CFBundleURLName</key>
+        <string>toothie</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>toothie</string>
+        </array>
+      </dict>
+    </array>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
+    <false />
+    <key>FacebookAppID</key>
+    <string>{facebook-app-id}</string>
+    <key>FacebookAutoLogAppEventsEnabled</key>
+    <false />
+    <key>FacebookDisplayName</key>
+    <string>{facebook-app-name}</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>bankid</string>
+      <string>swish</string>
+      <string>fbapi</string>
+      <string>fb-messenger-share-api</string>
+      <string>fbauth2</string>
+      <string>fbshareextension</string>
+    </array>
+    <key>LSRequiresIPhoneOS</key>
+    <true />
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true />
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>localhost</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true />
+        </dict>
+      </dict>
+    </dict>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Allow $(PRODUCT_NAME) to access your calendar</string>
+    <key>NSCameraUsageDescription</key>
+    <string>
+      Used when making video calls or if you want to add images to a visit
+    </string>
+    <key>NSContactsUsageDescription</key>
+    <string>Allow $(PRODUCT_NAME) to access your contacts</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Allow $(PRODUCT_NAME) to use your location</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>
+      Used in order to associate your visit with the nearest clinic
+    </string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>
+      Used in order to associate your visit with the nearest clinic
+    </string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Used when making video calls</string>
+    <key>NSMotionUsageDescription</key>
+    <string>
+      Allow $(PRODUCT_NAME) to access your device&apos;s accelerometer
+    </string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Give $(PRODUCT_NAME) permission to save photos</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Give $(PRODUCT_NAME) permission to access your photos</string>
+    <key>NSRemindersUsageDescription</key>
+    <string>Allow $(PRODUCT_NAME) to access your reminders</string>
+    <key>UIAppFonts</key>
+    <array>
+      <string>OpenSans-Bold.ttf</string>
+      <string>OpenSans-SemiBold.ttf</string>
+      <string>OpenSans-Regular.ttf</string>
+      <string>KoHo-Regular.ttf</string>
+    </array>
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+      <string>armv7</string>
+      <string>gamekit</string>
+    </array>
+    <key>UIRequiresFullScreen</key>
+    <true />
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationPortrait</string>
+    </array>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <false />
+  </dict>
+</plist>

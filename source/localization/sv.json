@@ -1,0 +1,360 @@
+{
+  "common": {
+    "androidStore": "Google Play Store",
+    "iosStore": "App Store",
+    "abort": "Avbryt",
+    "back": "Tillbaka",
+    "confirm": "Ok",
+    "continue": "Fortsätt",
+    "emailAddress": "E-post",
+    "no": "Nej",
+    "save": "Spara",
+    "telephoneNumber": "Mobilnummer",
+    "tryAgain": "Försök igen",
+    "yes": "Ja",
+    "next": "Nästa",
+    "skip": "Hoppa över",
+    "personalNumber": "Personnummer",
+    "cardPayment": "Kortbetalning",
+    "pay": "Betala",
+    "swishPayment": "Betala med Swish",
+    "generalError": "Ett fel uppstod"
+  },
+  "login": {
+    "viewPager": {
+      "1": {
+        "body": ""
+      },
+      "2": {
+        "body": ""
+      },
+      "3": {
+        "body": ""
+      },
+      "4": {
+        "body": ""
+      },
+      "5": {
+        "body": ""
+      },
+      "6": {
+        "body": ""
+      },
+      "7": {
+        "body": ""
+      }
+    },
+    "bankId": {
+      "login": "Logga in med BankID",
+      "loginOther": "BankID på en annan enhet",
+      "startLogin": "Påbörja inloggning"
+    },
+    "waitTime": {
+      "_m": "Väntetiden är {{ estimate }}"
+    }
+  },
+  "authenticate": {
+    "started": "Påbörjar inloggning.",
+    "error": "Okänt fel.",
+    "startFailed": {
+      "_m": "BankID-appen verkar inte finnas på din enhet. Installera den och hämta ett BankID hos din internetbank. Installera appen från {{ platform | select(platforms) }} eller https://install.bankid.com",
+      "_v": {
+        "platforms": {
+          "android": "Play Store",
+          "ios": "App Store"
+        }
+      }
+    }
+  },
+  "verify": {
+    "bankId": {
+      "codes": {
+        "outstandingTransaction": "Starta BankID-appen.",
+        "noClient": "Starta BankID-appen.",
+        "userSign": "Skriv in din säkerhetskod i BankID-appen och välj Legitimera.",
+        "started": "Söker efter BankID, det kan ta en liten stund... Om det har gått några sekunder och inget BankID har hittats har du sannolikt inget BankID som går att använda för den aktuella identifieringen/underskriften i den här datorn. Om du har ett BankID-kort, sätt in det i kortläsaren. Om du inte har något BankID kan du hämta ett hos din internetbank. Om du har ett BankID på en annan enhet kan du starta din BankID-app där.",
+        "cancelled": "Åtgärden avbruten. Försök igen.",
+        "alreadyInProgress": "En identifiering eller underskrift för det här personnumret är redan påbörjad. Försök igen.",
+        "requestTimeout": "Internt tekniskt fel. Försök igen.",
+        "maintenance": "Internt tekniskt fel. Försök igen.",
+        "internalError": "Internt tekniskt fel. Försök igen.",
+        "userCancel": "Åtgärden avbruten.",
+        "expiredTransaction": "BankID-appen svarar inte. Kontrollera att den är startad och att du har internet-anslutning. Om du inte har något giltigt BankID kan du hämta ett hos din Bank. Försök sedan igen.",
+        "certificateErr": "Det BankID du försöker använda är för gammalt eller spärrat. Använd ett annat BankID eller hämta ett nytt hos din internetbank.",
+        "startFailed": {
+          "_m": "BankID-appen verkar inte finnas på din enhet. Installera den och hämta ett BankID hos din internetbank. Installera appen från {{ platform | select(platforms) }} eller https://install.bankid.com",
+          "_v": {
+            "platforms": {
+              "android": "Play Store",
+              "ios": "App Store"
+            }
+          }
+        }
+      },
+      "defaultMessages": {
+        "pending": "Identifiering eller underskrift pågår.",
+        "failed": "Okänt fel. Försök igen.",
+        "complete": "Inloggning lyckades."
+      }
+    }
+  },
+  "register": {
+    "title": "Konto",
+    "instructions": "Eftersom att det är första gången du söker hjälp hos oss så behöver vi din e-postadress och ditt telefonnummer så att din behandlare kan nå dig.",
+    "terms": "Allmänna villkor",
+    "termsQuestion": "Accepterar du dessa villkor?",
+    "acceptTerms": "Jag accepterar",
+    "rejectTerms": "Jag accepterar inte",
+    "createAccount": "Skapa konto",
+    "abortRegistrationTitle": "Avbryt registrering",
+    "abortRegistrationMessage": "Är du säker på att du vill avbryta?"
+  },
+  "bottomTabNavigator": {
+    "start": "Start",
+    "history": "Mina ärenden",
+    "profilestack": "Min profil"
+  },
+  "start": {
+    "title": "Hur kan vi hjälpa dig idag?",
+    "greeting": {
+      "_m": "Hej {{ name }}!"
+    },
+    "menuItems": {
+      "me": "Boka samtal åt mig",
+      "child": "Boka samtal åt ett barn",
+      "faq": "Vanliga frågor och svar",
+      "guide": "Så funkar det"
+    },
+    "closing": {
+      "_m": "Stänger {{ closeTime }}"
+    },
+    "closed": {
+      "_m": "Stängd, öppnar {{ nextOpenTime }}"
+    }
+  },
+  "onBehalfOf": {
+    "title": "Uppgifter om barnet",
+    "firstName": "Förnamn",
+    "lastName": "Efternamn",
+    "personalNumberRequired": "Du måste ange barnets personnummer.",
+    "firstNameRequired": "Du måste ange barnets förnamn.",
+    "lastNameRequired": "Du måste ange barnets efternamn.",
+    "personalNumberWrongFormat": "Personnumret är felaktigt.",
+    "samePersonalNumberAsLoggedIn": "Du är inloggad i appen med samma personnummer som du angett ovan.",
+    "bookForMe": "Vill du boka ett besök till dig?"
+  },
+  "profile": {
+    "menuItems": {
+      "logOut": "Logga ut",
+      "contactInformation": "Kontaktuppgifter",
+      "healthDeclaration": "Hälsodeklaration",
+      "settings": "Inställningar",
+      "legal": "Villkor"
+    }
+  },
+  "contactInformation": {
+    "title": "Kontaktuppgifter",
+    "description": "Här kan du uppdatera dina kontaktuppgifter.",
+    "phoneNumberInvalid": "Det angivna telefonnumret verkar inte stämma, kontrollera gärna att du har skrivit rätt innan du sparar.",
+    "emailAddressInvalid": "Ojdå, e-postadressen som du angett är inte giltig.",
+    "phoneNumberRequired": "Du måste ange ett telefonnummer.",
+    "emailAddressRequired": "Du måste ange en e-postadress.",
+    "phoneNumberFormat": "Formatet på telefonnumret känns inte igen."
+  },
+  "settings": {
+    "title": "Inställningar"
+  },
+  "legal": {
+    "title": "Villkor",
+    "content": "# Din integritet är viktig\nLäs gärna om hur vi värnar om din integritet i våra [användarvillkor](http://www.toothie.se/termsandconditions)."
+  },
+  "aestheticDentistry": {
+    "title": "Bilder",
+    "description": "För att vi ska kunna ge dig bästa hjälp, vill vi att du tar en uppsättning specifika foton av dina tänder.",
+    "takePhoto": "Ta bild",
+    "retakePhoto": "Ersätt bild",
+    "front": "Framifrån",
+    "right": "Höger sida",
+    "left": "Vänster sida",
+    "upper": "Övre tandrad underifrån",
+    "lower": "Nedre tandrad ovanifrån",
+    "reviewPhotos": "Fler bilder",
+    "reviewDescription": "Om du vill lägga till fler foton kan du göra det här.",
+    "reviewHeaderTitle": "Bilder"
+  },
+  "images": {
+    "title": "Bilder",
+    "description": "Vill du ladda upp bilder på ditt/dina besvär innan besöket?",
+    "payment": "Betalningsalternativ",
+    "confirm": "Bekräfta",
+    "add": "Lägg till bild",
+    "edit": "Ändra",
+    "help": "Tips",
+    "permissionsRequiredTitle": "Tillstånd krävs",
+    "permissionsRequiredMessage": "Ge Toothie tillstånd att använda kameran och bilder i enhetens inställningar."
+  },
+  "camera": {
+    "androidCameraPermissionOptions": {
+      "title": "Tillåtelse att använda kameran.",
+      "message": "Ditt medgivande krävs för att appen ska få tillgång till kameran.",
+      "buttonPositive": "Tillåt",
+      "buttonNegative": "Neka"
+    }
+  },
+  "cameraInstructions": {
+    "title": "Tips och instruktioner",
+    "intro": "Se till så att du har ordentligt med ljus där du tar bilderna. Om ljuset inte är tillräckligt så kan du alltid slå på kamerans blixt.",
+    "cameraSwitchTitle": "Är det svårt att se det du fotar?",
+    "cameraSwitchIntro": "Testa att växla mellan enhetens olika kameror.",
+    "cameraSwitchAdditional": "Använd knappen längst ner till höger för att växla mellan enhetens olika kameror."
+  },
+  "notifications": {
+    "title": "Notifikationer",
+    "description": "Toothie använder notifikationer för att meddela om inkommande samtal.",
+    "activate": "Aktivera",
+    "unknown": "Se till att du kan ta emot notifikationer så att du inte missar samtalet.",
+    "disabled": "Tillåt appen att skicka notifikationer så att du inte missar samtalet.",
+    "partial": "Se över appens inställningar för notifikationer så att du inte missar samtalet.",
+    "openSettings": "Visa inställningar"
+  },
+  "paymentProviders": {
+    "headerTitle": "Betala",
+    "noSwish": "För att betala med Swish måste appen finnas på den här enheten."
+  },
+  "paymentStripe": {
+    "securityInformation": "Kortbetalningar hanteras i enlighet med Payment Card Industry Data Security Standards (PCI DSS). Vår leverantör av kortbetalningar är certifierad PCI Level 1 Service Provider, den mest stringenta klassificeringen."
+  },
+  "paymentSwish": {
+    "toothie_initializing": "Ansluter till Swish...",
+    "toothie_openSwish": "Startar Swish",
+    "toothie_unknownError": "Ett fel uppstod.",
+    "toothie_openSwishError": "Kunde inte starta Swish.",
+    "toothie_unknownStatus": "Bearbetar betalning...",
+    "created": "Kontrollerar betalning...",
+    "paid": "Betalning mottagen.",
+    "declined": "Betalning medges ej.",
+    "error": "Ett problem uppstod under bearbetningen av betalningen."
+  },
+  "history": {
+    "title": "Mina ärenden",
+    "description": "Här hittar du dina nya och gamla ärenden.",
+    "active": "Pågående...",
+    "queued": "Kommande",
+    "closed": "Avslutade",
+    "canceled": "Avbrutna",
+    "abandoned": "Övergivna",
+    "draft": "Utkast",
+    "requiresAction": "Kräver svar",
+    "callFailed": "Väntar...",
+    "rescheduling": "Inväntar svar",
+    "reschedulingMessage": "Ditt samtal måste bokas om, tryck för alternativ.",
+    "alertTitle": "Ombokning av samtal",
+    "alertMessage": "Vill du ställa dig i kön eller avsluta ärendet helt?",
+    "alertNegative": "Avsluta ärendet",
+    "alertPositive": "Ställ mig i kön",
+    "cardTitle": {
+      "_m": "Videosamtal med {{ clinicianType | select(clinicianTypes) }}",
+      "_v": {
+        "clinicianTypes": {
+          "Unknown": "kliniker",
+          "Dentist": "tandläkare",
+          "Hygienist": "tandhygienist"
+        }
+      }
+    },
+    "clinicianType": {
+      "_m": "{{ clinicianType | select(clinicianTypes) }}",
+      "_v": {
+        "clinicianTypes": {
+          "Unknown": "Kliniker",
+          "Dentist": "Legitimerad tandläkare",
+          "Hygienist": "Legitimerad tandhygienist"
+        }
+      }
+    },
+    "patient": {
+      "_m": "Patient: {{ patientName }}"
+    },
+    "now": "Nu",
+    "past": {
+      "_m": "{{ distance | capitalize }} sedan"
+    },
+    "future": {
+      "_m": "Om {{ distance }}"
+    },
+    "refundTitle": {
+      "requested": "Återbetalning begärd",
+      "inProgress": "Återbetalning pågår",
+      "succeeded": "Återbetald",
+      "failed": "Återbetalning misslyckades",
+      "rejected": "Återbetalning nekad"
+    },
+    "refundDescription": {
+      "requested": "En återbetalning är begärd och kommer snart att behandlas.",
+      "inProgress": "Återbetalningen är under behandling.",
+      "succeeded": "",
+      "failed": "Ett fel uppstod återbetalningen skulle behandlas.",
+      "rejected": ""
+    }
+  },
+  "visits": {
+    "queue": "Väntar",
+    "active": "Samtal",
+    "rescheduling": "Ombokning"
+  },
+  "call": {
+    "connecting": "Ansluter",
+    "disconnecting": "Avslutar samtal",
+    "ended": "Tack för ditt samtal!",
+    "caregiver": "Behandlare",
+    "licensedPractitioner": {
+      "_m": "{{ clinicianType | select(clinicianTypes) }}",
+      "_v": {
+        "clinicianTypes": {
+          "Unknown": "Kliniker",
+          "Dentist": "Legitimerad tandläkare",
+          "Hygienist": "Legitimerad tandhygienist"
+        }
+      }
+    }
+  },
+  "upgrade": {
+    "title": "Obligatorisk uppdatering",
+    "explanation": "Toothie uppdateras ständigt med ny funktionalitet och förbättrad säkerhet.",
+    "currentVersion": "Nuvarande version",
+    "minimumVersion": "Lägsta körbara version",
+    "open": "Öppna"
+  },
+  "node": {
+    "existingQueuedVisit": "Du har redan ett besök i kön",
+    "onGoingCall": "Du har ett pågående samtal",
+    "draftNotCurrent": "Du har påbörjat ett ärende på en annan enhet"
+  },
+  "feedback": {
+    "title": "Tack för den här gången!",
+    "description": "Vi skulle gärna vilja veta vad du tyckte om samtalet.",
+    "send": "Skicka",
+    "anonymous": "Skicka anonymt",
+    "commentPlaceholder": "Skriv gärna en kommentar...",
+    "skipMessage": "Du har börjat lämna feedback, är du säker på att du vill fortsätta utan att spara?"
+  },
+  "confirmFreeVisit": {
+    "title": "Ditt samtal är kostnadsfritt!",
+    "description": "Vill du ställa dig i kön?",
+    "headerTitle": "Bekräfta"
+  },
+  "incomingCall": {
+    "title": "Inkommande samtal",
+    "alertTitle": "Vill du avsluta samtalet?",
+    "alertMessage": "Du kan inte återuppta ett avslutat samtal.",
+    "alertNegative": "Tillbaka",
+    "alertPositive": "Avsluta"
+  },
+  "questionTree": {
+    "headerTitle": "Beskrivning",
+    "dateTimePicker": "Välj datum och tid",
+    "dateTimePickerHeaderText": "Datum och tid",
+    "dateTimePickerConfirm": "Välj",
+    "abortMessage": "Vill du avbryta bokningen?"
+  }
+}

@@ -1,0 +1,74 @@
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  package="se.medigital.toothie.debug"
+>
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-feature android:name="android.hardware.camera" android:required="true"
+  />
+  <uses-feature
+    android:name="android.hardware.camera.autofocus"
+    android:required="false"
+  />
+  <uses-feature
+    android:name="android.hardware.camera.flash"
+    android:required="false"
+  />
+  <uses-feature
+    android:name="android.hardware.microphone"
+    android:required="true"
+  />
+  <application
+    android:name=".MainApplication"
+    android:label="@string/app_name"
+    android:icon="@mipmap/ic_launcher"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:allowBackup="false"
+    android:theme="@style/AppTheme"
+  >
+    <activity
+      android:name=".MainActivity"
+      android:label="@string/app_name"
+      android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+      android:screenOrientation="sensorPortrait"
+      android:windowSoftInputMode="adjustResize"
+      android:launchMode="singleTask"
+    >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="toothie" />
+      </intent-filter>
+    </activity>
+    <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"
+    />
+    <activity
+      android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+      android:theme="@style/Base.Theme.AppCompat"
+    />
+    <meta-data
+      android:name="firebase_analytics_collection_enabled"
+      android:value="false"
+    />
+    <meta-data
+      android:name="com.facebook.sdk.ApplicationId"
+      android:value="@string/facebook_app_id"
+    />
+    <meta-data
+      android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+      android:value="false"
+    />
+    <meta-data
+      android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+      android:value="false"
+    />
+  </application>
+</manifest>

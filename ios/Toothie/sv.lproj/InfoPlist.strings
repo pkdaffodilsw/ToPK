@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  Toothie
+
+  Created by Roger Berg Falk on 2019-09-24.
+  Copyright © 2019 ME Digital AB. All rights reserved.
+*/
+
+NSCameraUsageDescription = "Behövs vid videosamtal, eller om du vill bifoga bilder med ett besök";
+NSPhotoLibraryUsageDescription = "Behövs om du vill bifoga bilder med ett besök";
+NSLocationAlwaysUsageDescription = "Behövs för att associera ett besök med närmaste klinik";
+NSLocationWhenInUseUsageDescription = "Behövs för att associera ett besök med närmaste klinik";
+NSMicrophoneUsageDescription = "Behövs för att genomföra videosamtal med behandlare";

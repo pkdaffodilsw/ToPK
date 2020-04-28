@@ -1,0 +1,13 @@
+diff --git a/node_modules/json-schema-ref-parser/lib/util/url.js b/node_modules/json-schema-ref-parser/lib/util/url.js
+index b715705..fbdd180 100644
+--- a/node_modules/json-schema-ref-parser/lib/util/url.js
++++ b/node_modules/json-schema-ref-parser/lib/util/url.js
+@@ -29,7 +29,7 @@ exports.resolve = require("url").resolve;
+  * @returns {string}
+  */
+ exports.cwd = function cwd () {
+-  return process.browser ? location.href : process.cwd() + "/";
++  return process.browser ? location.href : process.cwd ? process.cwd() + "/" : "/";
+ };
+ 
+ /**

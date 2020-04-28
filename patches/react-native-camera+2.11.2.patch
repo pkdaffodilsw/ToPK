@@ -1,0 +1,40 @@
+diff --git a/node_modules/react-native-camera/ios/RNCamera.xcodeproj/project.pbxproj b/node_modules/react-native-camera/ios/RNCamera.xcodeproj/project.pbxproj
+index 71329b5..05c8894 100644
+--- a/node_modules/react-native-camera/ios/RNCamera.xcodeproj/project.pbxproj
++++ b/node_modules/react-native-camera/ios/RNCamera.xcodeproj/project.pbxproj
+@@ -238,7 +238,6 @@
+ 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+ 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj node_modules";
+ 				FRAMEWORK_SEARCH_PATHS = (
+-					"$(SRCROOT)/../../../ios/**",
+ 					"${BUILT_PRODUCTS_DIR}/**",
+ 					"$(SRCROOT)/../../ios/**",
+ 				);
+@@ -293,7 +292,6 @@
+ 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+ 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj node_modules";
+ 				FRAMEWORK_SEARCH_PATHS = (
+-					"$(SRCROOT)/../../../ios/**",
+ 					"${BUILT_PRODUCTS_DIR}/**",
+ 					"$(SRCROOT)/../../ios/**",
+ 				);
+diff --git a/node_modules/react-native-camera/ios/RNCamera.xcodeproj/xcuserdata/roger.xcuserdatad/xcschemes/xcschememanagement.plist b/node_modules/react-native-camera/ios/RNCamera.xcodeproj/xcuserdata/roger.xcuserdatad/xcschemes/xcschememanagement.plist
+new file mode 100644
+index 0000000..f4fa730
+--- /dev/null
++++ b/node_modules/react-native-camera/ios/RNCamera.xcodeproj/xcuserdata/roger.xcuserdatad/xcschemes/xcschememanagement.plist
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
++<plist version="1.0">
++<dict>
++	<key>SchemeUserState</key>
++	<dict>
++		<key>RNCamera.xcscheme_^#shared#^_</key>
++		<dict>
++			<key>orderHint</key>
++			<integer>59</integer>
++		</dict>
++	</dict>
++</dict>
++</plist>

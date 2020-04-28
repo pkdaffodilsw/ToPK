@@ -1,0 +1,142 @@
+diff --git a/node_modules/@react-native-community/cli/build/commands/runIOS/findMatchingSimulator.js b/node_modules/@react-native-community/cli/build/commands/runIOS/findMatchingSimulator.js
+index 4f75b7a..54d69c9 100644
+--- a/node_modules/@react-native-community/cli/build/commands/runIOS/findMatchingSimulator.js
++++ b/node_modules/@react-native-community/cli/build/commands/runIOS/findMatchingSimulator.js
+@@ -1,9 +1,9 @@
+-"use strict";
++"use strict"
+ 
+ Object.defineProperty(exports, "__esModule", {
+-  value: true
+-});
+-exports.default = void 0;
++  value: true,
++})
++exports.default = void 0
+ 
+ /**
+  * Copyright (c) Facebook, Inc. and its affiliates.
+@@ -29,55 +29,62 @@ exports.default = void 0;
+  */
+ function findMatchingSimulator(simulators, simulatorString) {
+   if (!simulators.devices) {
+-    return null;
++    return null
+   }
+ 
+-  const devices = simulators.devices;
+-  const parsedSimulatorName = simulatorString ? simulatorString.match(/(.*)? (?:\((.*)?\))?/) : [];
++  const devices = simulators.devices
++  const parsedSimulatorName = simulatorString
++    ? simulatorString.match(/(.*)? (?:\((.*)?\))?/)
++    : []
+ 
+   if (parsedSimulatorName && parsedSimulatorName[2] !== undefined) {
+-    var simulatorVersion = parsedSimulatorName[2];
+-    var simulatorName = parsedSimulatorName[1];
++    var simulatorVersion = parsedSimulatorName[2]
++    var simulatorName = parsedSimulatorName[1]
+   } else {
+-    simulatorName = simulatorString;
++    simulatorName = simulatorString
+   }
+ 
+-  let match;
++  let match
+ 
+   for (const versionDescriptor in devices) {
+-    const device = devices[versionDescriptor];
+-    let version = versionDescriptor;
++    const device = devices[versionDescriptor]
++    let version = versionDescriptor
+ 
+     if (/^com\.apple\.CoreSimulator\.SimRuntime\./g.test(version)) {
+       // Transform "com.apple.CoreSimulator.SimRuntime.iOS-12-2" into "iOS 12.2"
+-      version = version.replace(/^com\.apple\.CoreSimulator\.SimRuntime\.([^-]+)-([^-]+)-([^-]+)$/g, '$1 $2.$3');
++      version = version.replace(
++        /^com\.apple\.CoreSimulator\.SimRuntime\.([^-]+)-([^-]+)-([^-]+)$/g,
++        "$1 $2.$3",
++      )
+     } // Making sure the version of the simulator is an iOS or tvOS (Removes Apple Watch, etc)
+ 
+-
+-    if (!version.includes('iOS') && !version.includes('tvOS')) {
+-      continue;
++    if (!version.includes("iOS") && !version.includes("tvOS")) {
++      continue
+     }
+ 
+     if (simulatorVersion && !version.endsWith(simulatorVersion)) {
+-      continue;
++      continue
+     }
+ 
+     for (const i in device) {
+-      const simulator = device[i]; // Skipping non-available simulator
++      const simulator = device[i] // Skipping non-available simulator
+ 
+-      if (simulator.availability !== '(available)' && simulator.isAvailable !== 'YES') {
+-        continue;
++      if (
++        simulator.availability !== "(available)" &&
++        simulator.isAvailable !== true
++      ) {
++        continue
+       }
+ 
+-      const booted = simulator.state === 'Booted';
++      const booted = simulator.state === "Booted"
+ 
+       if (booted && simulatorName === null) {
+         return {
+           udid: simulator.udid,
+           name: simulator.name,
+           booted,
+-          version
+-        };
++          version,
++        }
+       }
+ 
+       if (simulator.name === simulatorName && !match) {
+@@ -85,28 +92,27 @@ function findMatchingSimulator(simulators, simulatorString) {
+           udid: simulator.udid,
+           name: simulator.name,
+           booted,
+-          version
+-        };
++          version,
++        }
+       } // Keeps track of the first available simulator for use if we can't find one above.
+ 
+-
+       if (simulatorName === null && !match) {
+         match = {
+           udid: simulator.udid,
+           name: simulator.name,
+           booted,
+-          version
+-        };
++          version,
++        }
+       }
+     }
+   }
+ 
+   if (match) {
+-    return match;
++    return match
+   }
+ 
+-  return null;
++  return null
+ }
+ 
+-var _default = findMatchingSimulator;
+-exports.default = _default;
+\ No newline at end of file
++var _default = findMatchingSimulator
++exports.default = _default
+diff --git a/node_modules/@react-native-community/cli/build/commands/server/external/xsel b/node_modules/@react-native-community/cli/build/commands/server/external/xsel
+old mode 100644
+new mode 100755

@@ -1,0 +1,36 @@
+diff --git a/node_modules/react-native-notifications/android/app/src/main/java/com/wix/reactnativenotifications/core/notification/PushNotification.java b/node_modules/react-native-notifications/android/app/src/main/java/com/wix/reactnativenotifications/core/notification/PushNotification.java
+index 524ff07..805579a 100644
+--- a/node_modules/react-native-notifications/android/app/src/main/java/com/wix/reactnativenotifications/core/notification/PushNotification.java
++++ b/node_modules/react-native-notifications/android/app/src/main/java/com/wix/reactnativenotifications/core/notification/PushNotification.java
+@@ -153,6 +153,7 @@ public class PushNotification implements IPushNotification {
+                 .setContentText(mNotificationProps.getBody())
+                 .setContentIntent(intent)
+                 .setDefaults(Notification.DEFAULT_ALL)
++                .setPriority(Notification.PRIORITY_HIGH)
+                 .setAutoCancel(true);
+ 
+ 
+@@ -166,7 +167,7 @@ public class PushNotification implements IPushNotification {
+         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+             NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
+                     CHANNEL_NAME,
+-                    NotificationManager.IMPORTANCE_DEFAULT);
++                    NotificationManager.IMPORTANCE_HIGH);
+             final NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+             notificationManager.createNotificationChannel(channel);
+             notification.setChannelId(CHANNEL_ID);
+diff --git a/node_modules/react-native-notifications/android/app/src/reactNative60/java/com/wix/reactnativenotifications/NotificationManagerCompatFacade.java b/node_modules/react-native-notifications/android/app/src/reactNative60/java/com/wix/reactnativenotifications/NotificationManagerCompatFacade.java
+index 94ea188..f9c858b 100644
+--- a/node_modules/react-native-notifications/android/app/src/reactNative60/java/com/wix/reactnativenotifications/NotificationManagerCompatFacade.java
++++ b/node_modules/react-native-notifications/android/app/src/reactNative60/java/com/wix/reactnativenotifications/NotificationManagerCompatFacade.java
+@@ -2,8 +2,8 @@
+ package com.wix.reactnativenotifications;
+ 
+ import android.content.Context;
+-import androidx.annotation.NonNull;
+-import androidx.core.app.NotificationManagerCompat;
++import android.support.annotation.NonNull;
++import android.support.v4.app.NotificationManagerCompat;
+ 
+ public abstract class NotificationManagerCompatFacade {
+     public static NotificationManagerCompat from(@NonNull Context context) {

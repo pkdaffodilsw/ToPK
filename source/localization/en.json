@@ -1,0 +1,360 @@
+{
+  "common": {
+    "androidStore": "Google Play Store",
+    "iosStore": "App Store",
+    "abort": "Cancel",
+    "back": "Back",
+    "confirm": "OK",
+    "continue": "Next",
+    "emailAddress": "E-mail",
+    "no": "No",
+    "save": "Save",
+    "telephoneNumber": "Phone number",
+    "tryAgain": "Try again",
+    "yes": "Yes",
+    "next": "Next",
+    "skip": "Skip",
+    "personalNumber": "Social security number",
+    "cardPayment": "Pay with card",
+    "pay": "Pay now",
+    "swishPayment": "Pay with Swish",
+    "generalError": "Something went wrong"
+  },
+  "login": {
+    "viewPager": {
+      "1": {
+        "body": ""
+      },
+      "2": {
+        "body": ""
+      },
+      "3": {
+        "body": ""
+      },
+      "4": {
+        "body": ""
+      },
+      "5": {
+        "body": ""
+      },
+      "6": {
+        "body": ""
+      },
+      "7": {
+        "body": ""
+      }
+    },
+    "bankId": {
+      "login": "Log in with BankID",
+      "loginOther": "BankID on another device",
+      "startLogin": "Continue"
+    },
+    "waitTime": {
+      "_m": "The waiting time is {{ estimate }}"
+    }
+  },
+  "authenticate": {
+    "started": "Initiating login.",
+    "error": "Unknown error.",
+    "startFailed": {
+      "_m": "The BankID app couldn’t be found on your device. Please install it and order a BankID from your internet bank. Install the app from {{ platform | select(platforms) }} or https://install.bankid.com.",
+      "_v": {
+        "platforms": {
+          "android": "Play Store",
+          "ios": "App Store"
+        }
+      }
+    }
+  },
+  "verify": {
+    "bankId": {
+      "codes": {
+        "outstandingTransaction": "Start your BankID app.",
+        "noClient": "Start your BankID app.",
+        "userSign": "Enter your security code in the BankID app for identification.",
+        "started": "Searching for BankID, it may take a little while... If a few seconds have passed and still no BankID has been found, you probably don’t have a BankID which can be used for this identification/signing on this computer. If you have a BankID card, please insert it into your card reader. If you don’t have a BankID you can order one from your internet bank. If you have a BankID on another device you can start the BankID app on that device.",
+        "cancelled": "Action cancelled. Try again.",
+        "alreadyInProgress": "An identification or signing in for this social security number has already been started. Please try again.",
+        "requestTimeout": "Internal error. Please try again.",
+        "maintenance": "Internal error. Please try again.",
+        "internalError": "Internal error. Please try again.",
+        "userCancel": "Action cancelled.",
+        "expiredTransaction": "The BankID app is not responding. Please check that the program is started and that you have internet access. If you don’t have a valid BankID you can get one from your bank. Try again.",
+        "certificateErr": "The BankID you are trying to use is revoked or too old. Please use another BankID or order a new one from your internet bank.",
+        "startFailed": {
+          "_m": "The BankID app couldn’t be found on your device. Please install it and order a BankID from your internet bank. Install the app from {{ platform | select(platforms) }} or https://install.bankid.com.",
+          "_v": {
+            "platforms": {
+              "android": "Play Store",
+              "ios": "App Store"
+            }
+          }
+        }
+      },
+      "defaultMessages": {
+        "pending": "Identification or signing in progress.",
+        "failed": "Unknown error. Please try again.",
+        "complete": "Successfully signed in."
+      }
+    }
+  },
+  "register": {
+    "title": "Account",
+    "instructions": "Since this is your first time using the app, we would like to ask you for your contact information.",
+    "terms": "Terms and conditions",
+    "termsQuestion": "Do you accept these conditions?",
+    "acceptTerms": "Accept",
+    "rejectTerms": "Reject",
+    "createAccount": "Create account",
+    "abortRegistrationTitle": "Cancel registration",
+    "abortRegistrationMessage": "Are you sure?"
+  },
+  "bottomTabNavigator": {
+    "start": "Start",
+    "history": "My appointments",
+    "profilestack": "My Profile"
+  },
+  "start": {
+    "title": "How may we assist you today?",
+    "greeting": {
+      "_m": "Hello {{ name }}!"
+    },
+    "menuItems": {
+      "me": "Book a call for me",
+      "child": "Book a call for a child",
+      "faq": "FAQ",
+      "guide": "How it works"
+    },
+    "closing": {
+      "_m": "Closing {{ closeTime }}"
+    },
+    "closed": {
+      "_m": "Closed, opens {{ nextOpenTime }}"
+    }
+  },
+  "onBehalfOf": {
+    "title": "Information about the child",
+    "firstName": "Given name",
+    "lastName": "Family name",
+    "personalNumberRequired": "A Swedish social security number for the child is required.",
+    "firstNameRequired": "A given name is required.",
+    "lastNameRequired": "A family name is required.",
+    "personalNumberWrongFormat": "Social security number is not recognized.",
+    "samePersonalNumberAsLoggedIn": "You are logged into the app with the same social security number as you entered above.",
+    "bookForMe": "Want to book a visit for yourself?"
+  },
+  "profile": {
+    "menuItems": {
+      "logOut": "Sign out",
+      "contactInformation": "Contact information",
+      "healthDeclaration": "Health report",
+      "settings": "Settings",
+      "legal": "Terms of service"
+    }
+  },
+  "contactInformation": {
+    "title": "Contact information",
+    "description": "You can use this form to update your contact information.",
+    "phoneNumberInvalid": "The phone number that you have entered is incorrect, please check that you have typed correctly before proceeding.",
+    "emailAddressInvalid": "Oops, the email address you entered is not valid.",
+    "phoneNumberRequired": "A phone number is required.",
+    "emailAddressRequired": "An e-mail address is required.",
+    "phoneNumberFormat": "The phone number format is not recognized."
+  },
+  "settings": {
+    "title": "Settings"
+  },
+  "legal": {
+    "title": "Terms",
+    "content": "# Your privacy is important\n please read about how we protect your privacy in our [terms of use](http://www.toothie.se/termsandconditions)."
+  },
+  "aestheticDentistry": {
+    "title": "Photos",
+    "description": "In order for us to provide you with the best help, we would like you to take a set specific photos of your teeth.",
+    "takePhoto": "Take photo",
+    "retakePhoto": "Replace photo",
+    "front": "Front on smile",
+    "right": "Smile right side",
+    "left": "Smile left side",
+    "upper": "Open upper smile",
+    "lower": "Open lower smile",
+    "reviewPhotos": "Additional photos",
+    "reviewDescription": "If you would like to add any additional photos you can do so here.",
+    "reviewHeaderTitle": "Photos"
+  },
+  "images": {
+    "title": "Photos",
+    "description": "You can add photos that might be useful.",
+    "payment": "Payment methods",
+    "confirm": "Confirm",
+    "add": "Add photo",
+    "edit": "Edit",
+    "help": "Help",
+    "permissionsRequiredTitle": "Permission required",
+    "permissionsRequiredMessage": "Open your device's settings and grant Toothie access to the camera and photo library."
+  },
+  "camera": {
+    "androidCameraPermissionOptions": {
+      "title": "Allow access to camera.",
+      "message": "We need your permission to access the camera.",
+      "buttonPositive": "Allow",
+      "buttonNegative": "Deny"
+    }
+  },
+  "cameraInstructions": {
+    "title": "Tips and instructions",
+    "intro": "Make sure you have proper light where you take the pictures. If the light is not enough, you can always turn on the camera flash.",
+    "cameraSwitchTitle": "Is it hard to see what you're shooting?",
+    "cameraSwitchIntro": "Try switching between the various cameras in the unit.",
+    "cameraSwitchAdditional": "Use the button at the bottom right to switch between the various cameras of the unit."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "description": "Notifications are used to inform you of incoming calls.",
+    "activate": "Activate",
+    "unknown": "Make sure you have enabled notifications so we can reach you when it's time.",
+    "disabled": "Allow the app to send notifications so you don't miss the call.",
+    "partial": "Check the app settings and fully enable notifications so you don't miss the call.",
+    "openSettings": "Settings"
+  },
+  "paymentProviders": {
+    "headerTitle": "Payment",
+    "noSwish": "To pay with Swish, the app must be installed on this device."
+  },
+  "paymentStripe": {
+    "securityInformation": "Credit/debit card payments are handled in accordance with the Payment Card Industry Data Security Standards (PCI DSS). Our provider is certified as a PCI Level 1 Service Provider, the highest standard available."
+  },
+  "paymentSwish": {
+    "toothie_initializing": "Connecting to Swish.",
+    "toothie_openSwish": "Opening Swish.",
+    "toothie_unknownError": "An error occurred.",
+    "toothie_openSwishError": "Could not open Swish.",
+    "toothie_unknownStatus": "Processing payment...",
+    "checking": "Checking payment...",
+    "paid": "Payment received.",
+    "declined": "Payment declined.",
+    "error": "An error occurred while processing the payment."
+  },
+  "history": {
+    "title": "My appointments",
+    "description": "Here you can see your upcoming and past appointments.",
+    "active": "Ongoing...",
+    "queued": "Upcoming",
+    "closed": "Ended",
+    "canceled": "Canceled",
+    "abandoned": "Abandoned",
+    "draft": "Drafts",
+    "requiresAction": "Requires action",
+    "callFailed": "Waiting...",
+    "rescheduling": "Awaiting action",
+    "reschedulingMessage": "Your call needs to be rescheduled, tap for options on how to proceed.",
+    "alertTitle": "Reschedule call",
+    "alertMessage": "Would you like to be added to the queue or cancel the call completely?",
+    "alertNegative": "Cancel call",
+    "alertPositive": "Join queue",
+    "cardTitle": {
+      "_m": "Video call with {{ clinicianType | select(clinicianTypes) }}",
+      "_v": {
+        "clinicianTypes": {
+          "Unknown": "a clinician",
+          "Dentist": "a dentist",
+          "Hygienist": "a dental hygienist"
+        }
+      }
+    },
+    "clinicianType": {
+      "_m": "{{ clinicianType | select(clinicianTypes) }}",
+      "_v": {
+        "clinicianTypes": {
+          "Unknown": "Clinician",
+          "Dentist": "Licensed dentist",
+          "Hygienist": "Licensed dental hygienist"
+        }
+      }
+    },
+    "patient": {
+      "_m": "Patient: {{ patientName }}"
+    },
+    "now": "Now",
+    "past": {
+      "_m": "{{ distance | capitalize }} ago"
+    },
+    "future": {
+      "_m": "In {{ distance }}"
+    },
+    "refundTitle": {
+      "requested": "Refund requested",
+      "inProgress": "Refund in progress",
+      "succeeded": "Refunded",
+      "failed": "Refund failed",
+      "rejected": "Refund rejected"
+    },
+    "refundDescription": {
+      "requested": "A refund has been requested and will be processed shortly.",
+      "inProgress": "We are currently processing the refund.",
+      "succeeded": "",
+      "failed": "Something went wrong when processing the refund.",
+      "rejected": ""
+    }
+  },
+  "visits": {
+    "queue": "Queueing",
+    "active": "Call",
+    "rescheduling": "Reschedule"
+  },
+  "call": {
+    "connecting": "Connecting",
+    "disconnecting": "Ending call",
+    "ended": "Thank you for calling!",
+    "caregiver": "Practitioner",
+    "licensedPractitioner": {
+      "_m": "{{ clinicianType | select(clinicianTypes) }}",
+      "_v": {
+        "clinicianTypes": {
+          "Unknown": "Clinician",
+          "Dentist": "Licensed dentist",
+          "Hygienist": "Licensed dental hygienist"
+        }
+      }
+    }
+  },
+  "upgrade": {
+    "title": "Required update",
+    "explanation": "Toothie is continually updated and developed for increased security, reliability and functionality.",
+    "currentVersion": "Current version",
+    "minimumVersion": "Minimum version",
+    "open": "Open"
+  },
+  "node": {
+    "existingQueuedVisit": "You already have an upcoming call in the queue",
+    "onGoingCall": "You have an ongoing call",
+    "draftNotCurrent": "You initiated a booking on another device"
+  },
+  "feedback": {
+    "title": "Nice talking to you!",
+    "description": "We would like to hear your feedback on how you experienced the call.",
+    "send": "Send",
+    "anonymous": "Send anonymously",
+    "commentPlaceholder": "Feel free to add a comment...",
+    "skipMessage": "You've begun to leave feedback, are you sure you want to continue without saving?"
+  },
+  "confirmFreeVisit": {
+    "title": "Your call is free of charge!",
+    "description": "Do you want to be added to the queue?",
+    "headerTitle": "Confirm"
+  },
+  "incomingCall": {
+    "title": "Incoming call",
+    "alertTitle": "Do you want to dismiss this call?",
+    "alertMessage": "It is not possible to resume a dismissed call.",
+    "alertNegative": "Cancel",
+    "alertPositive": "End call"
+  },
+  "questionTree": {
+    "headerTitle": "Description",
+    "dateTimePicker": "Select date and time",
+    "dateTimePickerHeaderText": "Date and time",
+    "dateTimePickerConfirm": "Select",
+    "abortMessage": "You are about to cancel this booking, are you sure?"
+  }
+}

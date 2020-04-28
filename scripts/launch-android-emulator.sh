@@ -1,0 +1,1 @@
+emulator -avd $(emulator -list-avds | head -n 1) > /dev/null &

@@ -1,0 +1,611 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "definition_pain_details": {
+      "type": "object",
+      "properties": {
+        "definition_pain_details_started": {
+          "type": "string",
+          "title": "definition_pain_details_started",
+          "enum": [
+            "enum_interval_last_24_hours",
+            "enum_interval_2_to_4_days_ago",
+            "enum_interval_5_to_14_days_ago",
+            "enum_interval_15_or_more_days_ago"
+          ]
+        },
+        "definition_pain_details_ingestion": {
+          "type": "string",
+          "app_uiControl": "button",
+          "enum": ["enum_bool_yes", "enum_bool_no"],
+          "title": "definition_pain_details_ingestion"
+        },
+        "definition_pain_details_when_chewing": {
+          "type": "string",
+          "app_uiControl": "button",
+          "enum": ["enum_bool_yes", "enum_bool_no"],
+          "title": "definition_pain_details_when_chewing"
+        },
+        "definition_pain_details_affects_sleep": {
+          "type": "string",
+          "app_uiControl": "button",
+          "enum": ["enum_bool_yes", "enum_bool_no"],
+          "title": "definition_pain_details_affects_sleep"
+        },
+        "definition_pain_details_description": {
+          "type": "array",
+          "title": "definition_pain_details_description",
+          "items": {
+            "type": "string",
+            "enum": [
+              "definition_pain_details_description_distinct",
+              "definition_pain_details_description_aching",
+              "definition_pain_details_description_constant",
+              "definition_pain_details_description_pulsing"
+            ]
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "definition_pain_details_started",
+        "definition_pain_details_ingestion",
+        "definition_pain_details_when_chewing",
+        "definition_pain_details_affects_sleep",
+        "definition_pain_details_description"
+      ]
+    }
+  },
+  "type": "object",
+  "title": "categories",
+  "oneOf": [
+    {
+      "type": "object",
+      "title": "category_aching",
+      "app_imageAsset": "tooth",
+      "properties": {
+        "category_aching": {
+          "$ref": "#/definitions/definition_pain_details"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "title": "category_trauma",
+      "app_imageAsset": "briefcase",
+      "properties": {
+        "category_trauma": {
+          "type": "object",
+          "title": "",
+          "app_warningMessage": "category_trauma_warning",
+          "properties": {
+            "category_trauma_bleeding": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_trauma_bleeding"
+            },
+            "category_trauma_pain": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_trauma_pain"
+            },
+            "category_trauma_swelling": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_trauma_swelling"
+            },
+            "category_trauma_when": {
+              "type": "string",
+              "format": "date-time",
+              "title": "category_trauma_when"
+            },
+            "category_trauma_where": {
+              "type": "string",
+              "title": "category_trauma_where",
+              "minLength": 1
+            },
+            "category_trauma_how": {
+              "type": "string",
+              "title": "category_trauma_how",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "category_trauma_bleeding",
+            "category_trauma_pain",
+            "category_trauma_swelling",
+            "category_trauma_when",
+            "category_trauma_where",
+            "category_trauma_how"
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "category_trauma_pain": {
+                    "enum": ["enum_bool_yes"]
+                  }
+                },
+                "required": ["category_trauma_pain"]
+              },
+              "then": {
+                "$ref": "#/definitions/definition_pain_details"
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "title": "category_gums_and_mucosa",
+      "app_imageAsset": "info",
+      "med_dentalType": "Hygienist",
+      "properties": {
+        "category_gums_and_mucosa": {
+          "type": "object",
+          "title": "",
+          "properties": {
+            "category_gums_and_mucosa_types": {
+              "type": "array",
+              "title": "category_gums_and_mucosa_types",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "category_gums_and_mucosa_types_bleeding",
+                  "category_gums_and_mucosa_types_swelling",
+                  "category_gums_and_mucosa_types_mouth_ulcers",
+                  "category_gums_and_mucosa_types_blisters",
+                  "category_gums_and_mucosa_types_other"
+                ]
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": ["category_gums_and_mucosa_types"],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "category_gums_and_mucosa_types": {
+                    "items": {
+                      "enum": ["category_gums_and_mucosa_types_bleeding"]
+                    }
+                  }
+                },
+                "required": ["category_gums_and_mucosa_types"]
+              },
+              "then": {
+                "$ref": "#/definitions/definition_pain_details"
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "category_gums_and_mucosa_types": {
+                    "items": {
+                      "enum": ["category_gums_and_mucosa_types_swelling"]
+                    }
+                  }
+                },
+                "required": ["category_gums_and_mucosa_types"]
+              },
+              "then": {
+                "$ref": "#/definitions/definition_pain_details"
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "category_gums_and_mucosa_types": {
+                    "items": {
+                      "enum": ["category_gums_and_mucosa_types_mouth_ulcers"]
+                    }
+                  }
+                },
+                "required": ["category_gums_and_mucosa_types"]
+              },
+              "then": {
+                "$ref": "#/definitions/definition_pain_details"
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "category_gums_and_mucosa_types": {
+                    "items": {
+                      "enum": ["category_gums_and_mucosa_types_blisters"]
+                    }
+                  }
+                },
+                "required": ["category_gums_and_mucosa_types"]
+              },
+              "then": {
+                "$ref": "#/definitions/definition_pain_details"
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "category_gums_and_mucosa_types": {
+                    "items": {
+                      "enum": ["category_gums_and_mucosa_types_other"]
+                    }
+                  }
+                },
+                "required": ["category_gums_and_mucosa_types"]
+              },
+              "then": {
+                "type": "object",
+                "properties": {
+                  "category_gums_and_mucosa_other": {
+                    "type": "string",
+                    "title": "category_gums_and_mucosa_other",
+                    "minLength": 1
+                  }
+                },
+                "required": ["category_gums_and_mucosa_other"]
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "title": "category_wisdom_teeth",
+      "app_imageAsset": "injured",
+      "properties": {
+        "category_wisdom_teeth": {
+          "type": "object",
+          "title": "",
+          "properties": {
+            "category_wisdom_teeth_swelling": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_wisdom_teeth_swelling"
+            },
+            "category_wisdom_teeth_pain": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_wisdom_teeth_pain"
+            }
+          },
+          "required": [
+            "category_wisdom_teeth_swelling",
+            "category_wisdom_teeth_pain"
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "category_wisdom_teeth_pain": {
+                    "enum": ["enum_bool_yes"]
+                  }
+                },
+                "required": ["category_wisdom_teeth_pain"]
+              },
+              "then": {
+                "$ref": "#/definitions/definition_pain_details"
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "category_wisdom_teeth_swelling": {
+                    "enum": ["enum_bool_no"]
+                  },
+                  "category_wisdom_teeth_pain": {
+                    "enum": ["enum_bool_no"]
+                  }
+                }
+              },
+              "then": {
+                "type": "object",
+                "properties": {
+                  "category_wisdom_teeth_other": {
+                    "type": "string",
+                    "title": "category_wisdom_teeth_other",
+                    "minLength": 1
+                  }
+                },
+                "required": ["category_wisdom_teeth_other"]
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "title": "category_jaws",
+      "app_imageAsset": "question",
+      "properties": {
+        "category_jaws": {
+          "type": "object",
+          "title": "",
+          "properties": {
+            "category_jaws_temple_face_jaw_temporomandibular": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_jaws_temple_face_jaw_temporomandibular"
+            },
+            "category_jaws_gape_chewing": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_jaws_gape_chewing"
+            },
+            "category_jaws_locked_snags": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_jaws_locked_snags"
+            }
+          },
+          "required": [
+            "category_jaws_temple_face_jaw_temporomandibular",
+            "category_jaws_gape_chewing",
+            "category_jaws_locked_snags"
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "category_jaws_temple_face_jaw_temporomandibular": {
+                    "enum": ["enum_bool_yes"]
+                  }
+                },
+                "required": ["category_jaws_temple_face_jaw_temporomandibular"]
+              },
+              "then": {
+                "$ref": "#/definitions/definition_pain_details"
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "category_jaws_gape_chewing": {
+                    "enum": ["enum_bool_yes"]
+                  }
+                },
+                "required": ["category_jaws_gape_chewing"]
+              },
+              "then": {
+                "$ref": "#/definitions/definition_pain_details"
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "category_jaws_temple_face_jaw_temporomandibular": {
+                    "enum": ["enum_bool_no"]
+                  },
+                  "category_jaws_gape_chewing": {
+                    "enum": ["enum_bool_no"]
+                  },
+                  "category_jaws_locked_snags": {
+                    "enum": ["enum_bool_no"]
+                  }
+                }
+              },
+              "then": {
+                "type": "object",
+                "properties": {
+                  "category_jaws_gape_chewing_other": {
+                    "type": "string",
+                    "title": "category_jaws_gape_chewing_other",
+                    "minLength": 1
+                  }
+                },
+                "required": ["category_jaws_gape_chewing_other"]
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "title": "category_lost_restorative_crown_bridge",
+      "app_imageAsset": "teeth",
+      "properties": {
+        "category_lost_restorative_crown_bridge": {
+          "type": "object",
+          "title": "",
+          "properties": {
+            "category_lost_restorative_crown_bridge_when": {
+              "type": "string",
+              "format": "date-time",
+              "title": "category_lost_restorative_crown_bridge_when"
+            },
+            "category_lost_restorative_crown_bridge_how": {
+              "type": "string",
+              "title": "category_lost_restorative_crown_bridge_how",
+              "minLength": 1
+            },
+            "category_lost_restorative_crown_bridge_sharp_cheek_tongue": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_lost_restorative_crown_bridge_sharp_cheek_tongue"
+            },
+            "category_lost_restorative_crown_bridge_pain": {
+              "type": "string",
+              "app_uiControl": "button",
+              "enum": ["enum_bool_yes", "enum_bool_no"],
+              "title": "category_lost_restorative_crown_bridge_pain"
+            }
+          },
+          "required": [
+            "category_lost_restorative_crown_bridge_when",
+            "category_lost_restorative_crown_bridge_how",
+            "category_lost_restorative_crown_bridge_sharp_cheek_tongue",
+            "category_lost_restorative_crown_bridge_pain"
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "category_lost_restorative_crown_bridge_pain": {
+                    "enum": ["enum_bool_yes"]
+                  }
+                },
+                "required": ["category_lost_restorative_crown_bridge_pain"]
+              },
+              "then": {
+                "$ref": "#/definitions/definition_pain_details"
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "category_lost_restorative_crown_bridge_sharp_cheek_tongue": {
+                    "enum": ["enum_bool_no"]
+                  },
+                  "category_lost_restorative_crown_bridge_pain": {
+                    "enum": ["enum_bool_no"]
+                  }
+                }
+              },
+              "then": {
+                "type": "object",
+                "properties": {
+                  "category_lost_restorative_crown_bridge_other": {
+                    "type": "string",
+                    "title": "category_lost_restorative_crown_bridge_other",
+                    "minLength": 1
+                  }
+                },
+                "required": ["category_lost_restorative_crown_bridge_other"]
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "title": "category_sensitivity",
+      "app_imageAsset": "thermometer",
+      "med_dental_type": "Hygienist",
+      "properties": {
+        "category_sensitivity": {
+          "type": "object",
+          "title": "",
+          "properties": {
+            "category_sensitivity_started": {
+              "type": "string",
+              "title": "category_sensitivity_started",
+              "enum": [
+                "enum_interval_last_24_hours",
+                "enum_interval_2_to_4_days_ago",
+                "enum_interval_5_to_14_days_ago",
+                "enum_interval_15_or_more_days_ago"
+              ]
+            },
+            "category_sensitivity_when": {
+              "type": "string",
+              "title": "category_sensitivity_when",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "category_sensitivity_started",
+            "category_sensitivity_when"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "title": "category_cosmetic",
+      "app_imageAsset": "tooth",
+      "med_isFree": true,
+      "properties": {
+        "category_cosmetic": {
+          "type": "object",
+          "title": "",
+          "properties": {
+            "category_cosmetic_types": {
+              "type": "array",
+              "title": "",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "category_cosmetic_types_crooked_teeth",
+                  "category_cosmetic_types_sparse_teeth",
+                  "category_cosmetic_types_color",
+                  "category_cosmetic_types_short_worn",
+                  "category_cosmetic_types_missing_teeth"
+                ]
+              },
+              "uniqueItems": true
+            },
+            "category_cosmetic_other": {
+              "type": "string",
+              "title": "category_cosmetic_other",
+              "minLength": 1
+            }
+          },
+          "required": ["category_cosmetic_types", "category_cosmetic_other"]
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "title": "category_dental_fear",
+      "app_imageAsset": "help",
+      "properties": {
+        "category_dental_fear": {
+          "type": "object",
+          "title": "",
+          "properties": {
+            "category_dental_fear_what": {
+              "type": "string",
+              "title": "category_dental_fear_what",
+              "description": "category_dental_fear_description",
+              "minLength": 1
+            }
+          },
+          "required": ["category_dental_fear_what"]
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "title": "category_other",
+      "app_imageAsset": "question",
+      "properties": {
+        "category_other": {
+          "type": "object",
+          "title": "",
+          "properties": {
+            "category_other_description": {
+              "type": "string",
+              "title": "category_other_description",
+              "minLength": 1
+            }
+          },
+          "required": ["category_other_description"]
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}
